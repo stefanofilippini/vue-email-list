@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- VUEjs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>vue-email</title>
 </head>
 <body>
-    
+    <div class="emails">
+        <ol class="list-email" v-if="listOk" >
+            <li v-for="email in emails">
+                <a :href="`mailto:${mail}`">
+                    {{email}}
+                </a>
+            </li>
+        </ol>
+        <h2 v-else>Loading...</h2>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
